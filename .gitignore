@@ -8,6 +8,12 @@
 *.obj
 *.exe
 build/
+CMakeFiles
+.vscode/
+_deps/
+CMakeCache.txt
+cmake_install.cmake
+main_app
 
 # Precompiled Headers
 *.gch
