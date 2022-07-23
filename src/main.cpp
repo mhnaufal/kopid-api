@@ -4,6 +4,10 @@
 #include "crow.h"
 #include "json.hpp"
 
+#define PORT 18080
+#define SERVER_NAME "Kopit 19 API"
+#define SET_LOG_LEVEL Debug
+
 using json = nlohmann::json;
 
 std::string MAIN_URL = "https://data.covid19.go.id/public/api/update.json";
@@ -36,14 +40,6 @@ int main(int argc, char **argv)
             }}
         });
 
-        // std::string data_string = covid_data_json.at("data").at("jumlah_odp").dump();
-        // std::cout << std::setw(4) << "VALUE => " << std::stoi(data_string) + 1000 << "\n\n";
-
-        // crow::json::wvalue result({
-        //     covid_data_json.at("data").at("jumlah_odp").dump()
-            // j_array.dump()
-        // });
-
         return result;
     });
 
@@ -53,8 +49,8 @@ int main(int argc, char **argv)
     CROW_CATCHALL_ROUTE(app)
     ([](crow::response& res)
     {
-        res.manual_length_header = true;
         res.add_header("Content-Type", "application/json");
+
         if (res.code == 404)
         {
             auto error_response = R"(
@@ -64,7 +60,6 @@ int main(int argc, char **argv)
                     "data": 0
                 }
             )";
-            res.body = error_response;
         }
         else if (res.code == 405)
         {
@@ -75,7 +70,6 @@ int main(int argc, char **argv)
                     "data": 0
                 }
             )";
-            res.body = error_response;
         }
         else
         {
@@ -86,15 +80,18 @@ int main(int argc, char **argv)
                     "data": 0
                 }
             )";
-            res.body = error_response;
         }
-    res.end();
+
+        res.body = error_response;
+        res.end();
     });
 
+    // set log level
+    crow::logger::setLogLevel(crow::LogLevel::SET_LOG_LEVEL);    
+
     // set port and run app
-    app.loglevel(crow::LogLevel::Debug)
-        .port(18080)
-        .server_name("Indonesia COVID 19 API")
+    app.port(PORT)
+        .server_name(SERVER_NAME)
         .multithreaded()
         .run();
 }
