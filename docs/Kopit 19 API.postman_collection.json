@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "cf305115-71e3-40c5-bdfd-6609024db61a",
+		"name": "Kopit 19 API",
+		"description": "# Kopit 19 API\n\nBuild using C++\n\n## List of APIs\n\n- `/` GET get all COVID cases\n- `/yearly/<int:year>` GET get all COVID cases in particular year",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Playground",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOME_URL}}/errorroute",
+					"host": [
+						"{{HOME_URL}}"
+					],
+					"path": [
+						"errorroute"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Covid Cases",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOME_URL}}/",
+					"host": [
+						"{{HOME_URL}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Covid Cases In a YEAR",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOME_URL}}/yearly/2022",
+					"host": [
+						"{{HOME_URL}}"
+					],
+					"path": [
+						"yearly",
+						"2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Covid Cases In a MONTH",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOME_URL}}/monthly/2022/7",
+					"host": [
+						"{{HOME_URL}}"
+					],
+					"path": [
+						"monthly",
+						"2022",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Covid Cases In a DATE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOME_URL}}/daily/2022/7/23",
+					"host": [
+						"{{HOME_URL}}"
+					],
+					"path": [
+						"daily",
+						"2022",
+						"7",
+						"23"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOME_URL",
+			"value": "http://127.0.0.1:18080"
+		}
+	]
+}
