@@ -2,9 +2,18 @@ cmake_minimum_required(VERSION 3.15.0 FATAL_ERROR)
 
 project(covid_app)
 
+file(GLOB_RECURSE SOURCES
+    src/*.cpp
+    src/services/*.cpp
+)
+
+include_directories(${PROJECT_SOURCE_DIR})
+include_directories(src)
+
 find_package(Crow)
 
-add_executable(main_app src/main.cpp)
+add_executable(main_app ${SOURCES})
+
 target_link_libraries(main_app PUBLIC Crow::Crow)
 
 include(FetchContent)
