@@ -18,7 +18,7 @@ int main(int argc, char **argv)
     CROW_ROUTE(app, "/")
     ([]()
     {
-        return get_all_cases_services();
+        return get_all_cases_service();
     });
 
     // GET "/daily/<int:year>/<int:month>/<int:date>"

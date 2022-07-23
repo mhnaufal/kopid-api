@@ -1,6 +1,6 @@
 #include "headers/service.hpp"
 
-crow::json::wvalue get_all_cases_services()
+crow::json::wvalue get_all_cases_service()
 {
     cpr::Response covid_data_raw = cpr::Get(cpr::Url{MAIN_URL});
     json covid_data_json = json::parse(covid_data_raw.text); // change string to JSON

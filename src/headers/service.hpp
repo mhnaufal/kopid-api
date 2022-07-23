@@ -12,6 +12,6 @@ using json = nlohmann::json;
 
 /** METHODS */
 void error_service(crow::response &res);
-crow::json::wvalue get_all_cases_services();
+crow::json::wvalue get_all_cases_service();
 
 #endif
