@@ -12,31 +12,51 @@ I know there are many COVID APIs out there, but let me create my own (using **C+
 
 ## Getting Started
 
-Below are some of the instructions on how to use this API or head to this [Docs](https://github.com)
+Below are some of the instructions on how to use this API or head to this [Docs](https://github.com/mhnaufal/kopid-api/tree/main/docs)
 
 ### Prerequisites
 
 Make sure you fullfil these requirements
 
-- 🐁 **C++ (11/14)** yes I use this dude 😭
+- 🐁 **C++ (11/14)** yes I use this language dude 😭
 - 🐦 **[Crow](https://crowcpp.org)** it helps me to survive the C++ world
-- 🐳 **[Docker](https://www.docker.com/)**  thanks you are here, dude 🐳  _("of course")_
+- 🐳 **[Docker](https://www.docker.com/)** (optional) thanks you are here, dude 🐳 _("of course")_
 
 ### Installation
 
 Follow these steps to install this API
 
+#### Manual
+
 1. Clone
 
-    ```bash
-    git clone https://githhub.com/mhnaufal/
-    ```
+   ```bash
+   git clone https://github.com/mhnaufal/kopid-api.git
+   ```
 
-2. Run
+2. Build
 
-    ```bash
-    cmake --build build/ --config Debug --target main_app -j && ./build/main_app
-    ```
+   ```bash
+   cmake --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++ -S/path/to/kopid-api -B/path/to/kopid-api/build -G "Unix Makefiles"
+   ```
+
+3. Run
+
+   ```bash
+   cmake --build build/ --config Debug --target main_app -j && ./build/main_app
+   ```
+
+4. Open up localhost:18080
+
+#### Docker
+
+1. Docker run
+
+   ```docker
+   docker container run --name kopit-api -d -p 18080:180180 lohehe/kopid-api:latest
+   ```
+
+2. Open up localhost:18080
 
 ## Endpoints
 
@@ -50,12 +70,15 @@ Follow these steps to install this API
 
 ## Unit Tests
 
+_Currently unit test need to be run manually and its still using [Postman](https://github.com/mhnaufal/kopid-api/blob/main/docs/Kopit%2019%20API.postman_collection.json)_
+
 ## What I learned from this Project
 
 1. Be grateful that now we have **Go** and **Rust**
 2. `g++ main.cpp` command its good, `Makefile` is great, but `CMake` is awesome
 3. I love when I compile, because I can have 5 minutes to do other useful things
 4. Segmentaution fault is our friend, but how we dealt with it is our enemy
+5. The most important thing is I learn **how to build and run C++** application manually without help any IDE _(but I use CMake autoamtion from VSCode 😭)_
 
 ## Acknowledgments
 

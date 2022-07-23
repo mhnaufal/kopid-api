@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "cf305115-71e3-40c5-bdfd-6609024db61a",
 		"name": "Kopit 19 API",
-		"description": "# Kopit 19 API\n\nBuild using C++\n\n## List of APIs\n\n- `/` GET get all COVID cases\n- `/yearly/<int:year>` GET get all COVID cases in particular year",
+		"description": "# Kopit 19 API\n\nBuild using C++\n\n## List of APIs\n\n- `/` GET get all COVID cases\n- `/yearly/<int:year>` GET get all COVID cases in particular year\n- `/monthly/<int:year>/<int:month>` GET get all COVID cases in particular year\n- `/daily/<int:year>/<int:month>/<int:date>` GET get all COVID cases in particular year",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -115,6 +115,10 @@
 				"exec": [
 					"pm.test(\"Status code is 200\", function () {",
 					"    pm.response.to.have.status(200);",
+					"});",
+					"",
+					"pm.test(\"Content-Type is present\", function () {",
+					"    pm.response.to.have.header(\"Content-Type\");",
 					"});"
 				]
 			}
