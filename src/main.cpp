@@ -2,7 +2,8 @@
 #include <string>
 #include <cpr/cpr.h>
 #include "crow.h"
-#include "json.hpp"
+#include "../include/json.hpp"
+#include "headers/error.h"
 
 #define PORT 18080
 #define SERVER_NAME "Kopit 19 API"
@@ -47,43 +48,9 @@ int main(int argc, char **argv)
 
     // GET ERROR
     CROW_CATCHALL_ROUTE(app)
-    ([](crow::response& res)
+    ([](crow::response &res)
     {
-        res.add_header("Content-Type", "application/json");
-
-        if (res.code == 404)
-        {
-            auto error_response = R"(
-                {
-                    "ok": false,
-                    "message": "[ERROR] Alamat salah!",
-                    "data": 0
-                }
-            )";
-        }
-        else if (res.code == 405)
-        {
-            auto error_response = R"(
-                {
-                    "ok": false,
-                    "message": "[ERROR] Metode tidak diperbolehkan!",
-                    "data": 0
-                }
-            )";
-        }
-        else
-        {
-            auto error_response = R"(
-                {
-                    "ok": false,
-                    "message": "[ERROR] Server sedang bermasalah!",
-                    "data": 0
-                }
-            )";
-        }
-
-        res.body = error_response;
-        res.end();
+        error_service(res);
     });
 
     // set log level
