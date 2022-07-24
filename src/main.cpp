@@ -28,6 +28,20 @@ int main(int argc, char **argv)
         return get_cases_by_date(year, month, date);
     });
 
+    // GET "/monthly/<int:year>/<int:month>"
+    CROW_ROUTE(app, "/monthly/<string>/<string>")
+    ([](std::string year, std::string month)
+    {
+        return crow::response("Will be implemented soon!");
+    });
+
+    // GET "/daily/<int:year>"
+    CROW_ROUTE(app, "/yearly/<string>")
+    ([](std::string year)
+    {
+        return crow::response("Will be implemented soon!");
+    });
+
     // GET ERROR
     CROW_CATCHALL_ROUTE(app)
     ([](crow::response &res)

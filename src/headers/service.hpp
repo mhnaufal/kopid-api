@@ -14,5 +14,7 @@ using json = nlohmann::json;
 void error_service(crow::response &res);
 crow::json::wvalue get_all_cases_service();
 crow::json::wvalue get_cases_by_date(std::string year, std::string month, std::string date);
+crow::json::wvalue get_cases_by_month(std::string year, std::string month);
+crow::json::wvalue get_cases_by_year(std::string year);
 
 #endif

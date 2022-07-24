@@ -27,7 +27,12 @@ crow::json::wvalue get_all_cases_service()
 
 crow::json::wvalue get_cases_by_date(std::string year, std::string month, std::string date)
 {
-    if (std::stoi(year) < 2020 || std::stoi(month) < 1 || std::stoi(month) > 12 || std::stoi(date) < 1 || std::stoi(date) > 31)
+    if (std::stoi(year) < 2020 ||
+        std::stoi(month) < 1 ||
+        std::stoi(month) > 12 ||
+        std::stoi(date) < 1 || 
+        std::stoi(date) > 31 ||
+        ((std::stoi(month) == 2 || std::stoi(month) == 02) && std::stoi(date) > 29))
     {
         crow::json::wvalue result({
             {"ok", false},
