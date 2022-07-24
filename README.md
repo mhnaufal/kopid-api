@@ -68,7 +68,7 @@ Follow these steps to install this API
 
 - `/monthly/<int:year>/<int:month>` **GET** get all COVID 19 cases in the given month of the year ❌
 
-- `/daily/<int:year>/<int:month>/<int:date>` **GET** get all COVID 19 cases in the give date ❌
+- `/daily/<int:year>/<int:month>/<int:date>` **GET** get all COVID 19 cases in the give date ✅
 
 ## Unit Tests
 
