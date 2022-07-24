@@ -22,6 +22,11 @@ int main(int argc, char **argv)
     });
 
     // GET "/daily/<int:year>/<int:month>/<int:date>"
+    CROW_ROUTE(app, "/daily/<string>/<string>/<string>")
+    ([](std::string year, std::string month, std::string date)
+    {
+        return get_cases_by_date(year, month, date);
+    });
 
     // GET ERROR
     CROW_CATCHALL_ROUTE(app)
