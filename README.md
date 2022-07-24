@@ -28,16 +28,18 @@ Follow these steps to install this API
 
 #### Manual
 
-1. Clone
+1. Clone and go into the directory
 
    ```bash
    git clone https://github.com/mhnaufal/kopid-api.git
+
+   cd kopid-api
    ```
 
 2. Build
 
    ```bash
-   cmake --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++ -S/path/to/kopid-api -B/path/to/kopid-api/build -G "Unix Makefiles"
+   cmake --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++ -S/kopid-api -B/kopid-api/build -G "Unix Makefiles"
    ```
 
 3. Run
@@ -53,7 +55,7 @@ Follow these steps to install this API
 1. Docker run
 
    ```docker
-   docker container run --name kopit-api -d -p 18080:180180 lohehe/kopid-api:latest
+   docker container run --name kopit-api -d -p 18080:18080 lohehe/kopid-api:latest
    ```
 
 2. Open up localhost:18080
