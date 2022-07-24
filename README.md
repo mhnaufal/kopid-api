@@ -36,13 +36,13 @@ Follow these steps to install this API
    cd kopid-api
    ```
 
-2. Build
+2. Configure CMake
 
    ```bash
    cmake --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++ -S/kopid-api -B/kopid-api/build -G "Unix Makefiles"
    ```
 
-3. Run
+3. Build & Run
 
    ```bash
    cmake --build build/ --config Debug --target main_app -j && ./build/main_app
