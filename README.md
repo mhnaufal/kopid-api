@@ -26,7 +26,7 @@ Make sure you fullfil these requirements
 
 Follow these steps to install this API
 
-#### Manual
+#### Manual (Recommended)
 
 1. Clone and go into the directory
 
