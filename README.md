@@ -55,7 +55,13 @@ Follow these steps to install this API
 1. Docker run
 
    ```docker
-   docker container run --name kopit-api -d -p 18080:18080 lohehe/kopid-api:latest
+   docker container run --name kopit-api -d -p 18080:18080 lohehe/kopit-api:latest
+   ```
+
+   or you can use the other image
+
+   ```docker
+   docker container run --name kopid-api -d -p 18080:18080 lohehe/kopid-api:latest
    ```
 
 2. Open up localhost:18080
@@ -80,7 +86,8 @@ _Currently unit test need to be run manually and its still using [Postman](https
 2. `g++ main.cpp` command its good, `Makefile` is great, but `CMake` is awesome
 3. I love when I compile, because I can have 5 minutes to do other useful things
 4. Segmentaution fault is our friend, but how we dealt with it is our enemy
-5. The most important thing is I learn **how to build and run C++** application manually without help any IDE _(but I use CMake autoamtion from VSCode 😭)_
+5. I need to reduce the number of layers in Dockerfile **(but I've run out of internet data/quota)**
+6. The most important thing is I learn **how to build and run C++** application manually without help any IDE _(but I use CMake autoamtion from VSCode 😭)_
 
 ## Acknowledgments
 
