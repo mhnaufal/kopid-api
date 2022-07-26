@@ -1,9 +1,5 @@
 # Kopit 19
 
-[![MIT License][license-shield]][license-url]
-[![C++][license-shield]][cpp-url]
-[![Docker][license-shield]][docker-url]
-
 COVID 19 API built using **C++++** because it's **C++** + **Crow** + **COVID**
 
 ## About
