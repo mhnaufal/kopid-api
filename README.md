@@ -83,7 +83,7 @@ _Currently unit test need to be run manually and its still using [Postman](https
 3. I love when I compile, because I can have 5 minutes to do other useful things
 4. Segmentaution fault is our friend, but how we dealt with it is our enemy
 5. I need to reduce the number of layers in Dockerfile **(but I've run out of internet data/quota)**
-6. The most important thing is I learn **how to build and run C++** application manually without help any IDE _(but I use CMake autoamtion from VSCode 😭)_
+6. The most important thing is I learn **how to build and run C++** application manually without help any IDE _(but I use CMake automation from VSCode 😭)_
 
 ## Acknowledgments
 
